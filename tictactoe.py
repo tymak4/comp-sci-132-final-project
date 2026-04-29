@@ -9,15 +9,21 @@ def check_winner(board,player):
             return True
     
     for col in range(3):
-        column = [board[row][col] for row in range(3)]
+        column = []
+        for row in range(3):
+            column.append(board[row][col])
         if column.count(player) == 3:
             return True
     
-    left_to_right_diagonal = [board[i][i] for i in range(3)]
+    left_to_right_diagonal = []
+    for i in range(3):
+        left_to_right_diagonal.append(board[[i][i]])
     if left_to_right_diagonal.count(player) == 3:
         return True
     
-    right_to_left_diagonal = [board[i][2-i] for i in range(3)]
+    right_to_left_diagonal = []
+    for i in range(3):
+        right_to_left_diagonal.append(board[i][2-i])
     if right_to_left_diagonal.count(player) == 3:
         return True
     
