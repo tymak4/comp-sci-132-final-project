@@ -17,7 +17,7 @@ def check_winner(board,player):
     
     left_to_right_diagonal = []
     for i in range(3):
-        left_to_right_diagonal.append(board[[i][i]])
+        left_to_right_diagonal.append(board[i][i])
     if left_to_right_diagonal.count(player) == 3:
         return True
     
@@ -26,7 +26,6 @@ def check_winner(board,player):
         right_to_left_diagonal.append(board[i][2-i])
     if right_to_left_diagonal.count(player) == 3:
         return True
-    
     return False
 
 def is_draw(board):
